@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="inputForm" method="get" action="http://localhost:8080/testServlet/calc">
+	<table border="1" cellpadding="5">
+		<tr>
+			<th width="100">X</th>
+			<td>
+				<input type="text" name="x" id="x">
+				<div id="xCheck"></div>				
+			</td>
+		</tr>
+		<tr>
+			<th width="100">Y</th>
+			<td>
+				<input type="text" name="y" id="y">
+				<div id="yCheck"></div>	
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" value="계산" onclick="check()">
+				<input type="reset" value="취소">
+			</td>
+		</tr>
+	</table>
+</form>
+<script>
+	function check(){
+		document.getElementById("xCheck").innerText = "";
+		document.getElementById("yCheck").innerText = "";
+		
+		if(document.inputForm.x.value=="")
+			document.getElementById("xCheck").innerText = "x값을 입력안했네???";
+		else if(document.inputForm.y.value=="")
+			document.getElementById("yCheck").innerText = "y값 입력 안함??";
+		else
+			document.inputForm.submit();
+	}
+</script>
+</body>
+</html>
