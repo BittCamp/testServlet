@@ -29,7 +29,9 @@ public class CalcServlet extends HttpServlet {
 		out.println(x +" + "+y +" = "+ (x+y)+"<br>");
 		out.println(x +" - "+y +" = "+ (x-y)+"<br>");
 		out.println(x +" * "+y +" = "+ (x*y)+"<br>");
-		out.println(x +" / "+y +" = "+ (x/y)+"<br>");
+		out.println(x +" / "+y +" = "+ ((double)x/y)+"<br>");
+		out.println("<input type ='button' value='뒤로' onclick='history.go(-1)'>");
+		out.println("<input type ='button' value='뒤로' onclick=location.href='/testServlet/calc/input.html'>");
 		out.println("</body>");
 		out.println("</html>");
 		
